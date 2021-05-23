@@ -4,7 +4,17 @@ parse
  : feature_express EOF
  ;
 
+
 feature_express:
+key'('variable_name|feature_express')'
+|key'('variable_name|feature_express','variable_name|feature_express')'
+|'('variable_name|feature_express')'key7'('variable_name|feature_express')'
+|key'('variable_name|feature_express','variable_name|feature_express','time_express','variable_name|feature_express')'
+|key'('table_name','variable_name|feature_express')';
+
+key:ORIGINAL|BINARY_LABEL|DAYOFWEEK|HOUROFDAY|ISWEEKDAY|MULTI_DIRECT|TIMEDIFF|COMBINE|ISIN|WINDOW_SUM;
+
+feature_express2:
     key1'('variable_name')'
     |key2'('inner_expression')'
     |key3'('table_name','variable_name')'

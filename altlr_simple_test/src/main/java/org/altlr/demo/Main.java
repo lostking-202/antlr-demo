@@ -16,7 +16,7 @@ public class Main {
     parser.setBuildParseTree(true);
     FeatureParser.ParseContext tree = parser.parse();
     FeatureVisitor visitor=new FeatureVisitor(tree);
-    visitor.visit(tree);
+    //visitor.visit(tree);
     /*tree.
     visitor.visitFeature_express()*/
     System.out.println(tree);
@@ -33,7 +33,7 @@ public class Main {
     System.out.println(context.express4().getText());
     System.out.println(context.express5().getText());*/
     List<ParseTree> trees=context.children;
-    System.out.println(visitor.findExpress().getText());
+    System.out.println(visitor.getExpress().getText());
 
   }
 }

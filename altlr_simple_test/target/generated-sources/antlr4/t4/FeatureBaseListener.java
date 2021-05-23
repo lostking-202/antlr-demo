@@ -1,4 +1,4 @@
-// Generated from t4/Feature.g4 by ANTLR 4.9.2
+// Generated from t4\Feature.g4 by ANTLR 4.9.2
 package t4;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -35,6 +35,30 @@ public class FeatureBaseListener implements FeatureListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFeature_express(FeatureParser.Feature_expressContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterKey(FeatureParser.KeyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitKey(FeatureParser.KeyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFeature_express2(FeatureParser.Feature_express2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFeature_express2(FeatureParser.Feature_express2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

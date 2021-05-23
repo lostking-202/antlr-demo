@@ -4,8 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>web</module>
-		<module>runTest</module>
         <module>antlr_test</module>
         <module>altlr_simple_test</module>
     </modules>
@@ -16,7 +14,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>antlr-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>testDemo</name>
 	<description>Demo project for Spring Boot</description>

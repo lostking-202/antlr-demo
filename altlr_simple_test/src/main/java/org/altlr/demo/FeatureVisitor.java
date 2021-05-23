@@ -22,16 +22,22 @@ public class FeatureVisitor {
   public FeatureVisitor(FeatureParser.ParseContext parseContext){
     this.parseContext=parseContext;
   }
-  public ParserRuleContext getExpress(){
+  public FeatureParser.Feature_expressContext getExpress(){
     return parseContext.feature_express();
   }
   public boolean isNested(){
-    return parseContext.feature_express().inner_expression()!=null;
+    return parseContext.feature_express().feature_express()!=null;
   }
   public String getFunctionName(){
-    return parseContext.feature_express().key1().getText();
+    return parseContext.feature_express().key().getText();
   }
   public List<String> getParams(){
+    return null;
+  }
+  public String parseFeatureExpress(){
+    String functionName=getExpress().key().getText();
+    map.get(functionName);
+    getExpress().variable_name();
     return null;
   }
 }

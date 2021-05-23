@@ -1,4 +1,4 @@
-// Generated from t4/Feature.g4 by ANTLR 4.9.2
+// Generated from t4\Feature.g4 by ANTLR 4.9.2
 package t4;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -27,6 +27,26 @@ public interface FeatureListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFeature_express(FeatureParser.Feature_expressContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link FeatureParser#key}.
+	 * @param ctx the parse tree
+	 */
+	void enterKey(FeatureParser.KeyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FeatureParser#key}.
+	 * @param ctx the parse tree
+	 */
+	void exitKey(FeatureParser.KeyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link FeatureParser#feature_express2}.
+	 * @param ctx the parse tree
+	 */
+	void enterFeature_express2(FeatureParser.Feature_express2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link FeatureParser#feature_express2}.
+	 * @param ctx the parse tree
+	 */
+	void exitFeature_express2(FeatureParser.Feature_express2Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link FeatureParser#expression}.
 	 * @param ctx the parse tree
