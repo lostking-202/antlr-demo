@@ -6,11 +6,11 @@ parse
 
 
 feature_express:
-key'('variable_name|feature_express')'
-|key'('variable_name|feature_express','variable_name|feature_express')'
-|'('variable_name|feature_express')'key7'('variable_name|feature_express')'
-|key'('variable_name|feature_express','variable_name|feature_express','time_express','variable_name|feature_express')'
-|key'('table_name','variable_name|feature_express')';
+key'('(variable_name|feature_express)')'
+|key'('(variable_name|feature_express)','(variable_name|feature_express)')'
+|'('(variable_name|feature_express)')'key'('(variable_name|feature_express)')'
+|key'('(variable_name|feature_express)','(variable_name|feature_express)','time_express','(variable_name|feature_express)')'
+|key'('table_name','(variable_name|feature_express)')';
 
 key:ORIGINAL|BINARY_LABEL|DAYOFWEEK|HOUROFDAY|ISWEEKDAY|MULTI_DIRECT|TIMEDIFF|COMBINE|ISIN|WINDOW_SUM;
 
