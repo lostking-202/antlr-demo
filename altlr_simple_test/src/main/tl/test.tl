@@ -1,0 +1,1 @@
+binary_label(multi_direct(batch102600_flatten_request,batch102603_action.label))
