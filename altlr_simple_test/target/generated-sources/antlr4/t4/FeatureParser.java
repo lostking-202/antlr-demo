@@ -1,4 +1,4 @@
-// Generated from t4\Feature.g4 by ANTLR 4.9.2
+// Generated from t4/Feature.g4 by ANTLR 4.9.2
 package t4;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -17,42 +17,42 @@ public class FeatureParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, DAY=8, LIMIT=9, 
-		SECOND=10, MULTI_DIRECT=11, BINARY_LABEL=12, ORIGINAL=13, TIMEDIFF=14, 
-		ISIN=15, COMBINE=16, DAYOFWEEK=17, HOUROFDAY=18, ISWEEKDAY=19, WINDOW_SUM=20, 
-		STRING=21;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, SUBTRACT=8, MULTIPLY=9, 
+		DIVIDE=10, ADD=11, LOG=12, REGRESSION_LABEL=13, SPLIT=14, SPLIT_KEY=15, 
+		WINDOW_MAX=16, WINDOW_MIN=17, WINDOW_AVG=18, WINDOW_UNIQUE_COUNT=19, WINDOW_COUNT=20, 
+		WINDOW_TOP1_RATIO=21, DAY=22, LIMIT=23, SECOND=24, MULTI_DIRECT=25, BINARY_LABEL=26, 
+		ORIGINAL=27, TIMEDIFF=28, ISIN=29, COMBINE=30, DAYOFWEEK=31, HOUROFDAY=32, 
+		ISWEEKDAY=33, WINDOW_SUM=34, STRING=35;
 	public static final int
-		RULE_parse = 0, RULE_feature_express = 1, RULE_key = 2, RULE_feature_express2 = 3, 
-		RULE_expression = 4, RULE_inner_expression = 5, RULE_express1 = 6, RULE_express2 = 7, 
-		RULE_express3 = 8, RULE_express4 = 9, RULE_express5 = 10, RULE_express6 = 11, 
-		RULE_express7 = 12, RULE_single_window_express = 13, RULE_variable_name = 14, 
-		RULE_key1 = 15, RULE_key2 = 16, RULE_key3 = 17, RULE_key4 = 18, RULE_key5 = 19, 
-		RULE_key6 = 20, RULE_key7 = 21, RULE_key8 = 22, RULE_time_express = 23, 
-		RULE_table_name = 24, RULE_field_name = 25;
+		RULE_parse = 0, RULE_feature_express = 1, RULE_key = 2, RULE_single_window_express = 3, 
+		RULE_variable_name = 4, RULE_time_express = 5, RULE_table_name = 6, RULE_field_name = 7;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"parse", "feature_express", "key", "feature_express2", "expression", 
-			"inner_expression", "express1", "express2", "express3", "express4", "express5", 
-			"express6", "express7", "single_window_express", "variable_name", "key1", 
-			"key2", "key3", "key4", "key5", "key6", "key7", "key8", "time_express", 
-			"table_name", "field_name"
+			"parse", "feature_express", "key", "single_window_express", "variable_name", 
+			"time_express", "table_name", "field_name"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'('", "')'", "','", "'.'", "'d:'", "':'", "'s'", null, null, null, 
-			"'multi_direct'", "'binary_label'", "'original'", "'timediff'", "'isin'", 
-			"'combine'", "'dayofweek'", "'hourofday'", "'isweekday'", "'window_sum'"
+			null, "'('", "')'", "','", "'.'", "'d:'", "':'", "'s'", "'subtract'", 
+			"'multiply'", "'divide'", "'add'", "'log'", "'regression_label'", "'split'", 
+			"'split_key'", "'window_max'", "'window_min'", "'window_avg'", "'window_unique_count'", 
+			"'window_count'", "'window_top1_ratio'", null, null, null, "'multi_direct'", 
+			"'binary_label'", "'original'", "'timediff'", "'isin'", "'combine'", 
+			"'dayofweek'", "'hourofday'", "'isweekday'", "'window_sum'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, "DAY", "LIMIT", "SECOND", 
-			"MULTI_DIRECT", "BINARY_LABEL", "ORIGINAL", "TIMEDIFF", "ISIN", "COMBINE", 
-			"DAYOFWEEK", "HOUROFDAY", "ISWEEKDAY", "WINDOW_SUM", "STRING"
+			null, null, null, null, null, null, null, null, "SUBTRACT", "MULTIPLY", 
+			"DIVIDE", "ADD", "LOG", "REGRESSION_LABEL", "SPLIT", "SPLIT_KEY", "WINDOW_MAX", 
+			"WINDOW_MIN", "WINDOW_AVG", "WINDOW_UNIQUE_COUNT", "WINDOW_COUNT", "WINDOW_TOP1_RATIO", 
+			"DAY", "LIMIT", "SECOND", "MULTI_DIRECT", "BINARY_LABEL", "ORIGINAL", 
+			"TIMEDIFF", "ISIN", "COMBINE", "DAYOFWEEK", "HOUROFDAY", "ISWEEKDAY", 
+			"WINDOW_SUM", "STRING"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -136,9 +136,9 @@ public class FeatureParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(52);
+			setState(16);
 			feature_express();
-			setState(53);
+			setState(17);
 			match(EOF);
 			}
 		}
@@ -198,26 +198,39 @@ public class FeatureParser extends Parser {
 		Feature_expressContext _localctx = new Feature_expressContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_feature_express);
 		try {
-			setState(120);
+			setState(81);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(55);
+				setState(19);
 				key();
-				setState(56);
+				setState(20);
 				match(T__0);
-				setState(59);
+				setState(23);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(57);
+					setState(21);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -229,34 +242,47 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(58);
+					setState(22);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(61);
+				setState(25);
 				match(T__1);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(63);
+				setState(27);
 				key();
-				setState(64);
+				setState(28);
 				match(T__0);
-				setState(67);
+				setState(31);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(65);
+					setState(29);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -268,25 +294,38 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(66);
+					setState(30);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(69);
+				setState(33);
 				match(T__2);
-				setState(72);
+				setState(36);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(70);
+					setState(34);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -298,32 +337,45 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(71);
+					setState(35);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(74);
+				setState(38);
 				match(T__1);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(76);
+				setState(40);
 				match(T__0);
-				setState(79);
+				setState(43);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(77);
+					setState(41);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -335,29 +387,42 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(78);
+					setState(42);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(81);
+				setState(45);
 				match(T__1);
-				setState(82);
+				setState(46);
 				key();
-				setState(83);
+				setState(47);
 				match(T__0);
-				setState(86);
+				setState(50);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(84);
+					setState(48);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -369,34 +434,47 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(85);
+					setState(49);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(88);
+				setState(52);
 				match(T__1);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(90);
+				setState(54);
 				key();
-				setState(91);
+				setState(55);
 				match(T__0);
-				setState(94);
+				setState(58);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(92);
+					setState(56);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -408,25 +486,38 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(93);
+					setState(57);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(96);
+				setState(60);
 				match(T__2);
-				setState(99);
+				setState(63);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(97);
+					setState(61);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -438,29 +529,42 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(98);
+					setState(62);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(101);
+				setState(65);
 				match(T__2);
-				setState(102);
+				setState(66);
 				time_express();
-				setState(103);
+				setState(67);
 				match(T__2);
-				setState(106);
+				setState(70);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case STRING:
 					{
-					setState(104);
+					setState(68);
 					variable_name();
 					}
 					break;
 				case T__0:
+				case SUBTRACT:
+				case MULTIPLY:
+				case DIVIDE:
+				case ADD:
+				case REGRESSION_LABEL:
+				case SPLIT:
+				case SPLIT_KEY:
+				case WINDOW_MAX:
+				case WINDOW_MIN:
+				case WINDOW_AVG:
+				case WINDOW_UNIQUE_COUNT:
+				case WINDOW_COUNT:
+				case WINDOW_TOP1_RATIO:
 				case MULTI_DIRECT:
 				case BINARY_LABEL:
 				case ORIGINAL:
@@ -472,57 +576,33 @@ public class FeatureParser extends Parser {
 				case ISWEEKDAY:
 				case WINDOW_SUM:
 					{
-					setState(105);
+					setState(69);
 					feature_express();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(108);
+				setState(72);
 				match(T__1);
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(110);
+				setState(74);
 				key();
-				setState(111);
+				setState(75);
 				match(T__0);
-				setState(112);
+				setState(76);
 				table_name();
-				setState(113);
+				setState(77);
 				match(T__2);
-				setState(116);
-				_errHandler.sync(this);
-				switch (_input.LA(1)) {
-				case STRING:
-					{
-					setState(114);
-					variable_name();
-					}
-					break;
-				case T__0:
-				case MULTI_DIRECT:
-				case BINARY_LABEL:
-				case ORIGINAL:
-				case TIMEDIFF:
-				case ISIN:
-				case COMBINE:
-				case DAYOFWEEK:
-				case HOUROFDAY:
-				case ISWEEKDAY:
-				case WINDOW_SUM:
-					{
-					setState(115);
-					feature_express();
-					}
-					break;
-				default:
-					throw new NoViableAltException(this);
+				{
+				setState(78);
+				variable_name();
 				}
-				setState(118);
+				setState(79);
 				match(T__1);
 				}
 				break;
@@ -542,14 +622,28 @@ public class FeatureParser extends Parser {
 	public static class KeyContext extends ParserRuleContext {
 		public TerminalNode ORIGINAL() { return getToken(FeatureParser.ORIGINAL, 0); }
 		public TerminalNode BINARY_LABEL() { return getToken(FeatureParser.BINARY_LABEL, 0); }
-		public TerminalNode DAYOFWEEK() { return getToken(FeatureParser.DAYOFWEEK, 0); }
-		public TerminalNode HOUROFDAY() { return getToken(FeatureParser.HOUROFDAY, 0); }
-		public TerminalNode ISWEEKDAY() { return getToken(FeatureParser.ISWEEKDAY, 0); }
-		public TerminalNode MULTI_DIRECT() { return getToken(FeatureParser.MULTI_DIRECT, 0); }
-		public TerminalNode TIMEDIFF() { return getToken(FeatureParser.TIMEDIFF, 0); }
-		public TerminalNode COMBINE() { return getToken(FeatureParser.COMBINE, 0); }
-		public TerminalNode ISIN() { return getToken(FeatureParser.ISIN, 0); }
+		public TerminalNode REGRESSION_LABEL() { return getToken(FeatureParser.REGRESSION_LABEL, 0); }
+		public TerminalNode SPLIT() { return getToken(FeatureParser.SPLIT, 0); }
+		public TerminalNode SPLIT_KEY() { return getToken(FeatureParser.SPLIT_KEY, 0); }
 		public TerminalNode WINDOW_SUM() { return getToken(FeatureParser.WINDOW_SUM, 0); }
+		public TerminalNode WINDOW_MAX() { return getToken(FeatureParser.WINDOW_MAX, 0); }
+		public TerminalNode WINDOW_MIN() { return getToken(FeatureParser.WINDOW_MIN, 0); }
+		public TerminalNode WINDOW_AVG() { return getToken(FeatureParser.WINDOW_AVG, 0); }
+		public TerminalNode WINDOW_UNIQUE_COUNT() { return getToken(FeatureParser.WINDOW_UNIQUE_COUNT, 0); }
+		public TerminalNode WINDOW_COUNT() { return getToken(FeatureParser.WINDOW_COUNT, 0); }
+		public TerminalNode WINDOW_TOP1_RATIO() { return getToken(FeatureParser.WINDOW_TOP1_RATIO, 0); }
+		public TerminalNode MULTI_DIRECT() { return getToken(FeatureParser.MULTI_DIRECT, 0); }
+		public TerminalNode ISIN() { return getToken(FeatureParser.ISIN, 0); }
+		public TerminalNode COMBINE() { return getToken(FeatureParser.COMBINE, 0); }
+		public TerminalNode TIMEDIFF() { return getToken(FeatureParser.TIMEDIFF, 0); }
+		public TerminalNode LOG() { return getToken(FeatureParser.LOG, 0); }
+		public TerminalNode DAYOFWEEK() { return getToken(FeatureParser.DAYOFWEEK, 0); }
+		public TerminalNode ISWEEKDAY() { return getToken(FeatureParser.ISWEEKDAY, 0); }
+		public TerminalNode HOUROFDAY() { return getToken(FeatureParser.HOUROFDAY, 0); }
+		public TerminalNode ADD() { return getToken(FeatureParser.ADD, 0); }
+		public TerminalNode DIVIDE() { return getToken(FeatureParser.DIVIDE, 0); }
+		public TerminalNode MULTIPLY() { return getToken(FeatureParser.MULTIPLY, 0); }
+		public TerminalNode SUBTRACT() { return getToken(FeatureParser.SUBTRACT, 0); }
 		public KeyContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -572,412 +666,171 @@ public class FeatureParser extends Parser {
 	public final KeyContext key() throws RecognitionException {
 		KeyContext _localctx = new KeyContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_key);
-		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(122);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MULTI_DIRECT) | (1L << BINARY_LABEL) | (1L << ORIGINAL) | (1L << TIMEDIFF) | (1L << ISIN) | (1L << COMBINE) | (1L << DAYOFWEEK) | (1L << HOUROFDAY) | (1L << ISWEEKDAY) | (1L << WINDOW_SUM))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Feature_express2Context extends ParserRuleContext {
-		public Key1Context key1() {
-			return getRuleContext(Key1Context.class,0);
-		}
-		public List<Variable_nameContext> variable_name() {
-			return getRuleContexts(Variable_nameContext.class);
-		}
-		public Variable_nameContext variable_name(int i) {
-			return getRuleContext(Variable_nameContext.class,i);
-		}
-		public Key2Context key2() {
-			return getRuleContext(Key2Context.class,0);
-		}
-		public Inner_expressionContext inner_expression() {
-			return getRuleContext(Inner_expressionContext.class,0);
-		}
-		public Key3Context key3() {
-			return getRuleContext(Key3Context.class,0);
-		}
-		public Table_nameContext table_name() {
-			return getRuleContext(Table_nameContext.class,0);
-		}
-		public Key4Context key4() {
-			return getRuleContext(Key4Context.class,0);
-		}
-		public Key5Context key5() {
-			return getRuleContext(Key5Context.class,0);
-		}
-		public Key6Context key6() {
-			return getRuleContext(Key6Context.class,0);
-		}
-		public Key7Context key7() {
-			return getRuleContext(Key7Context.class,0);
-		}
-		public Key8Context key8() {
-			return getRuleContext(Key8Context.class,0);
-		}
-		public Time_expressContext time_express() {
-			return getRuleContext(Time_expressContext.class,0);
-		}
-		public Feature_express2Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_feature_express2; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterFeature_express2(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitFeature_express2(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitFeature_express2(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Feature_express2Context feature_express2() throws RecognitionException {
-		Feature_express2Context _localctx = new Feature_express2Context(_ctx, getState());
-		enterRule(_localctx, 6, RULE_feature_express2);
-		try {
-			setState(181);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(124);
-				key1();
-				setState(125);
-				match(T__0);
-				setState(126);
-				variable_name();
-				setState(127);
-				match(T__1);
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(129);
-				key2();
-				setState(130);
-				match(T__0);
-				setState(131);
-				inner_expression();
-				setState(132);
-				match(T__1);
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(134);
-				key3();
-				setState(135);
-				match(T__0);
-				setState(136);
-				table_name();
-				setState(137);
-				match(T__2);
-				setState(138);
-				variable_name();
-				setState(139);
-				match(T__1);
-				}
-				break;
-			case 4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(141);
-				key4();
-				setState(142);
-				match(T__0);
-				setState(143);
-				variable_name();
-				setState(144);
-				match(T__2);
-				setState(145);
-				variable_name();
-				setState(146);
-				match(T__1);
-				}
-				break;
-			case 5:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(148);
-				key5();
-				setState(149);
-				match(T__0);
-				setState(150);
-				variable_name();
-				setState(151);
-				match(T__2);
-				setState(152);
-				inner_expression();
-				setState(153);
-				match(T__1);
-				}
-				break;
-			case 6:
-				enterOuterAlt(_localctx, 6);
-				{
-				setState(155);
-				key6();
-				setState(156);
-				match(T__0);
-				setState(157);
-				table_name();
-				setState(158);
-				match(T__2);
-				setState(159);
-				variable_name();
-				setState(160);
-				match(T__1);
-				}
-				break;
-			case 7:
-				enterOuterAlt(_localctx, 7);
-				{
-				setState(162);
-				match(T__0);
-				setState(163);
-				variable_name();
-				setState(164);
-				match(T__1);
-				setState(165);
-				key7();
-				setState(166);
-				match(T__0);
-				setState(167);
-				variable_name();
-				setState(168);
-				match(T__1);
-				}
-				break;
-			case 8:
-				enterOuterAlt(_localctx, 8);
-				{
-				setState(170);
-				key8();
-				setState(171);
-				match(T__0);
-				setState(172);
-				variable_name();
-				setState(173);
-				match(T__2);
-				setState(174);
-				variable_name();
-				setState(175);
-				match(T__2);
-				setState(176);
-				time_express();
-				setState(177);
-				match(T__2);
-				setState(178);
-				variable_name();
-				setState(179);
-				match(T__1);
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ExpressionContext extends ParserRuleContext {
-		public Key1Context key1() {
-			return getRuleContext(Key1Context.class,0);
-		}
-		public List<Variable_nameContext> variable_name() {
-			return getRuleContexts(Variable_nameContext.class);
-		}
-		public Variable_nameContext variable_name(int i) {
-			return getRuleContext(Variable_nameContext.class,i);
-		}
-		public Key2Context key2() {
-			return getRuleContext(Key2Context.class,0);
-		}
-		public Inner_expressionContext inner_expression() {
-			return getRuleContext(Inner_expressionContext.class,0);
-		}
-		public Key4Context key4() {
-			return getRuleContext(Key4Context.class,0);
-		}
-		public Key5Context key5() {
-			return getRuleContext(Key5Context.class,0);
-		}
-		public Key7Context key7() {
-			return getRuleContext(Key7Context.class,0);
-		}
-		public Key8Context key8() {
-			return getRuleContext(Key8Context.class,0);
-		}
-		public Time_expressContext time_express() {
-			return getRuleContext(Time_expressContext.class,0);
-		}
-		public ExpressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expression; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpression(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpression(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ExpressionContext expression() throws RecognitionException {
-		ExpressionContext _localctx = new ExpressionContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_expression);
-		try {
-			setState(226);
+			setState(107);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ORIGINAL:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(183);
-				key1();
-				setState(184);
-				match(T__0);
-				setState(185);
-				variable_name();
-				setState(186);
-				match(T__1);
+				setState(83);
+				match(ORIGINAL);
 				}
 				break;
 			case BINARY_LABEL:
-			case DAYOFWEEK:
-			case HOUROFDAY:
-			case ISWEEKDAY:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(188);
-				key2();
-				setState(189);
-				match(T__0);
-				setState(190);
-				inner_expression();
-				setState(191);
-				match(T__1);
+				setState(84);
+				match(BINARY_LABEL);
 				}
 				break;
-			case TIMEDIFF:
+			case REGRESSION_LABEL:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(193);
-				key4();
-				setState(194);
-				match(T__0);
-				setState(195);
-				variable_name();
-				setState(196);
-				match(T__2);
-				setState(197);
-				variable_name();
-				setState(198);
-				match(T__1);
+				setState(85);
+				match(REGRESSION_LABEL);
 				}
 				break;
-			case COMBINE:
+			case SPLIT:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(200);
-				key5();
-				setState(201);
-				match(T__0);
-				setState(202);
-				variable_name();
-				setState(203);
-				match(T__2);
-				setState(204);
-				inner_expression();
-				setState(205);
-				match(T__1);
+				setState(86);
+				match(SPLIT);
 				}
 				break;
-			case T__0:
+			case SPLIT_KEY:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(207);
-				match(T__0);
-				setState(208);
-				variable_name();
-				setState(209);
-				match(T__1);
-				setState(210);
-				key7();
-				setState(211);
-				match(T__0);
-				setState(212);
-				variable_name();
-				setState(213);
-				match(T__1);
+				setState(87);
+				match(SPLIT_KEY);
 				}
 				break;
 			case WINDOW_SUM:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(215);
-				key8();
-				setState(216);
-				match(T__0);
-				setState(217);
-				variable_name();
-				setState(218);
-				match(T__2);
-				setState(219);
-				variable_name();
-				setState(220);
-				match(T__2);
-				setState(221);
-				time_express();
-				setState(222);
-				match(T__2);
-				setState(223);
-				variable_name();
-				setState(224);
-				match(T__1);
+				setState(88);
+				match(WINDOW_SUM);
+				}
+				break;
+			case WINDOW_MAX:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(89);
+				match(WINDOW_MAX);
+				}
+				break;
+			case WINDOW_MIN:
+				enterOuterAlt(_localctx, 8);
+				{
+				setState(90);
+				match(WINDOW_MIN);
+				}
+				break;
+			case WINDOW_AVG:
+				enterOuterAlt(_localctx, 9);
+				{
+				setState(91);
+				match(WINDOW_AVG);
+				}
+				break;
+			case WINDOW_UNIQUE_COUNT:
+				enterOuterAlt(_localctx, 10);
+				{
+				setState(92);
+				match(WINDOW_UNIQUE_COUNT);
+				}
+				break;
+			case WINDOW_COUNT:
+				enterOuterAlt(_localctx, 11);
+				{
+				setState(93);
+				match(WINDOW_COUNT);
+				}
+				break;
+			case WINDOW_TOP1_RATIO:
+				enterOuterAlt(_localctx, 12);
+				{
+				setState(94);
+				match(WINDOW_TOP1_RATIO);
+				}
+				break;
+			case MULTI_DIRECT:
+				enterOuterAlt(_localctx, 13);
+				{
+				setState(95);
+				match(MULTI_DIRECT);
+				}
+				break;
+			case ISIN:
+				enterOuterAlt(_localctx, 14);
+				{
+				setState(96);
+				match(ISIN);
+				}
+				break;
+			case COMBINE:
+				enterOuterAlt(_localctx, 15);
+				{
+				setState(97);
+				match(COMBINE);
+				}
+				break;
+			case TIMEDIFF:
+				enterOuterAlt(_localctx, 16);
+				{
+				setState(98);
+				match(TIMEDIFF);
+				setState(99);
+				match(LOG);
+				}
+				break;
+			case DAYOFWEEK:
+				enterOuterAlt(_localctx, 17);
+				{
+				setState(100);
+				match(DAYOFWEEK);
+				}
+				break;
+			case ISWEEKDAY:
+				enterOuterAlt(_localctx, 18);
+				{
+				setState(101);
+				match(ISWEEKDAY);
+				}
+				break;
+			case HOUROFDAY:
+				enterOuterAlt(_localctx, 19);
+				{
+				setState(102);
+				match(HOUROFDAY);
+				}
+				break;
+			case ADD:
+				enterOuterAlt(_localctx, 20);
+				{
+				setState(103);
+				match(ADD);
+				}
+				break;
+			case DIVIDE:
+				enterOuterAlt(_localctx, 21);
+				{
+				setState(104);
+				match(DIVIDE);
+				}
+				break;
+			case MULTIPLY:
+				enterOuterAlt(_localctx, 22);
+				{
+				setState(105);
+				match(MULTIPLY);
+				}
+				break;
+			case SUBTRACT:
+				enterOuterAlt(_localctx, 23);
+				{
+				setState(106);
+				match(SUBTRACT);
 				}
 				break;
 			default:
@@ -995,477 +848,9 @@ public class FeatureParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Inner_expressionContext extends ParserRuleContext {
-		public Key3Context key3() {
-			return getRuleContext(Key3Context.class,0);
-		}
-		public Table_nameContext table_name() {
-			return getRuleContext(Table_nameContext.class,0);
-		}
-		public Variable_nameContext variable_name() {
-			return getRuleContext(Variable_nameContext.class,0);
-		}
-		public Inner_expressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_inner_expression; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterInner_expression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitInner_expression(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitInner_expression(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Inner_expressionContext inner_expression() throws RecognitionException {
-		Inner_expressionContext _localctx = new Inner_expressionContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_inner_expression);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(228);
-			key3();
-			setState(229);
-			match(T__0);
-			setState(230);
-			table_name();
-			setState(231);
-			match(T__2);
-			setState(232);
-			variable_name();
-			setState(233);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express1Context extends ParserRuleContext {
-		public Key1Context key1() {
-			return getRuleContext(Key1Context.class,0);
-		}
-		public Variable_nameContext variable_name() {
-			return getRuleContext(Variable_nameContext.class,0);
-		}
-		public Express1Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express1; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress1(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress1(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress1(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express1Context express1() throws RecognitionException {
-		Express1Context _localctx = new Express1Context(_ctx, getState());
-		enterRule(_localctx, 12, RULE_express1);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(235);
-			key1();
-			setState(236);
-			match(T__0);
-			setState(237);
-			variable_name();
-			setState(238);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express2Context extends ParserRuleContext {
-		public Key2Context key2() {
-			return getRuleContext(Key2Context.class,0);
-		}
-		public Express3Context express3() {
-			return getRuleContext(Express3Context.class,0);
-		}
-		public Express2Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express2; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress2(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress2(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress2(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express2Context express2() throws RecognitionException {
-		Express2Context _localctx = new Express2Context(_ctx, getState());
-		enterRule(_localctx, 14, RULE_express2);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(240);
-			key2();
-			setState(241);
-			match(T__0);
-			setState(242);
-			express3();
-			setState(243);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express3Context extends ParserRuleContext {
-		public Key3Context key3() {
-			return getRuleContext(Key3Context.class,0);
-		}
-		public Table_nameContext table_name() {
-			return getRuleContext(Table_nameContext.class,0);
-		}
-		public Variable_nameContext variable_name() {
-			return getRuleContext(Variable_nameContext.class,0);
-		}
-		public Express3Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express3; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress3(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress3(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress3(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express3Context express3() throws RecognitionException {
-		Express3Context _localctx = new Express3Context(_ctx, getState());
-		enterRule(_localctx, 16, RULE_express3);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(245);
-			key3();
-			setState(246);
-			match(T__0);
-			setState(247);
-			table_name();
-			setState(248);
-			match(T__2);
-			setState(249);
-			variable_name();
-			setState(250);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express4Context extends ParserRuleContext {
-		public Key4Context key4() {
-			return getRuleContext(Key4Context.class,0);
-		}
-		public List<Variable_nameContext> variable_name() {
-			return getRuleContexts(Variable_nameContext.class);
-		}
-		public Variable_nameContext variable_name(int i) {
-			return getRuleContext(Variable_nameContext.class,i);
-		}
-		public Express4Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express4; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress4(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress4(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress4(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express4Context express4() throws RecognitionException {
-		Express4Context _localctx = new Express4Context(_ctx, getState());
-		enterRule(_localctx, 18, RULE_express4);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(252);
-			key4();
-			setState(253);
-			match(T__0);
-			setState(254);
-			variable_name();
-			setState(255);
-			match(T__2);
-			setState(256);
-			variable_name();
-			setState(257);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express5Context extends ParserRuleContext {
-		public Key5Context key5() {
-			return getRuleContext(Key5Context.class,0);
-		}
-		public Variable_nameContext variable_name() {
-			return getRuleContext(Variable_nameContext.class,0);
-		}
-		public Express6Context express6() {
-			return getRuleContext(Express6Context.class,0);
-		}
-		public Express5Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express5; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress5(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress5(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress5(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express5Context express5() throws RecognitionException {
-		Express5Context _localctx = new Express5Context(_ctx, getState());
-		enterRule(_localctx, 20, RULE_express5);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(259);
-			key5();
-			setState(260);
-			match(T__0);
-			setState(261);
-			variable_name();
-			setState(262);
-			match(T__2);
-			setState(263);
-			express6();
-			setState(264);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express6Context extends ParserRuleContext {
-		public Key6Context key6() {
-			return getRuleContext(Key6Context.class,0);
-		}
-		public Table_nameContext table_name() {
-			return getRuleContext(Table_nameContext.class,0);
-		}
-		public Variable_nameContext variable_name() {
-			return getRuleContext(Variable_nameContext.class,0);
-		}
-		public Express6Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express6; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress6(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress6(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress6(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express6Context express6() throws RecognitionException {
-		Express6Context _localctx = new Express6Context(_ctx, getState());
-		enterRule(_localctx, 22, RULE_express6);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(266);
-			key6();
-			setState(267);
-			match(T__0);
-			setState(268);
-			table_name();
-			setState(269);
-			match(T__2);
-			setState(270);
-			variable_name();
-			setState(271);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Express7Context extends ParserRuleContext {
-		public List<Variable_nameContext> variable_name() {
-			return getRuleContexts(Variable_nameContext.class);
-		}
-		public Variable_nameContext variable_name(int i) {
-			return getRuleContext(Variable_nameContext.class,i);
-		}
-		public Key7Context key7() {
-			return getRuleContext(Key7Context.class,0);
-		}
-		public Express7Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_express7; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterExpress7(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitExpress7(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitExpress7(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Express7Context express7() throws RecognitionException {
-		Express7Context _localctx = new Express7Context(_ctx, getState());
-		enterRule(_localctx, 24, RULE_express7);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(273);
-			match(T__0);
-			setState(274);
-			variable_name();
-			setState(275);
-			match(T__1);
-			setState(276);
-			key7();
-			setState(277);
-			match(T__0);
-			setState(278);
-			variable_name();
-			setState(279);
-			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
 	public static class Single_window_expressContext extends ParserRuleContext {
-		public Key8Context key8() {
-			return getRuleContext(Key8Context.class,0);
+		public KeyContext key() {
+			return getRuleContext(KeyContext.class,0);
 		}
 		public List<Variable_nameContext> variable_name() {
 			return getRuleContexts(Variable_nameContext.class);
@@ -1497,29 +882,29 @@ public class FeatureParser extends Parser {
 
 	public final Single_window_expressContext single_window_express() throws RecognitionException {
 		Single_window_expressContext _localctx = new Single_window_expressContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_single_window_express);
+		enterRule(_localctx, 6, RULE_single_window_express);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(281);
-			key8();
-			setState(282);
+			setState(109);
+			key();
+			setState(110);
 			match(T__0);
-			setState(283);
+			setState(111);
 			variable_name();
-			setState(284);
+			setState(112);
 			match(T__2);
-			setState(285);
+			setState(113);
 			variable_name();
-			setState(286);
+			setState(114);
 			match(T__2);
-			setState(287);
+			setState(115);
 			time_express();
-			setState(288);
+			setState(116);
 			match(T__2);
-			setState(289);
+			setState(117);
 			variable_name();
-			setState(290);
+			setState(118);
 			match(T__1);
 			}
 		}
@@ -1562,364 +947,16 @@ public class FeatureParser extends Parser {
 
 	public final Variable_nameContext variable_name() throws RecognitionException {
 		Variable_nameContext _localctx = new Variable_nameContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_variable_name);
+		enterRule(_localctx, 8, RULE_variable_name);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(292);
+			setState(120);
 			table_name();
-			setState(293);
+			setState(121);
 			match(T__3);
-			setState(294);
+			setState(122);
 			field_name();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key1Context extends ParserRuleContext {
-		public TerminalNode ORIGINAL() { return getToken(FeatureParser.ORIGINAL, 0); }
-		public Key1Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key1; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey1(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey1(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey1(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key1Context key1() throws RecognitionException {
-		Key1Context _localctx = new Key1Context(_ctx, getState());
-		enterRule(_localctx, 30, RULE_key1);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(296);
-			match(ORIGINAL);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key2Context extends ParserRuleContext {
-		public TerminalNode BINARY_LABEL() { return getToken(FeatureParser.BINARY_LABEL, 0); }
-		public TerminalNode DAYOFWEEK() { return getToken(FeatureParser.DAYOFWEEK, 0); }
-		public TerminalNode HOUROFDAY() { return getToken(FeatureParser.HOUROFDAY, 0); }
-		public TerminalNode ISWEEKDAY() { return getToken(FeatureParser.ISWEEKDAY, 0); }
-		public Key2Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key2; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey2(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey2(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey2(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key2Context key2() throws RecognitionException {
-		Key2Context _localctx = new Key2Context(_ctx, getState());
-		enterRule(_localctx, 32, RULE_key2);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(298);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BINARY_LABEL) | (1L << DAYOFWEEK) | (1L << HOUROFDAY) | (1L << ISWEEKDAY))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key3Context extends ParserRuleContext {
-		public TerminalNode MULTI_DIRECT() { return getToken(FeatureParser.MULTI_DIRECT, 0); }
-		public Key3Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key3; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey3(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey3(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey3(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key3Context key3() throws RecognitionException {
-		Key3Context _localctx = new Key3Context(_ctx, getState());
-		enterRule(_localctx, 34, RULE_key3);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(300);
-			match(MULTI_DIRECT);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key4Context extends ParserRuleContext {
-		public TerminalNode TIMEDIFF() { return getToken(FeatureParser.TIMEDIFF, 0); }
-		public Key4Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key4; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey4(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey4(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey4(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key4Context key4() throws RecognitionException {
-		Key4Context _localctx = new Key4Context(_ctx, getState());
-		enterRule(_localctx, 36, RULE_key4);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(302);
-			match(TIMEDIFF);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key5Context extends ParserRuleContext {
-		public TerminalNode COMBINE() { return getToken(FeatureParser.COMBINE, 0); }
-		public Key5Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key5; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey5(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey5(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey5(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key5Context key5() throws RecognitionException {
-		Key5Context _localctx = new Key5Context(_ctx, getState());
-		enterRule(_localctx, 38, RULE_key5);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(304);
-			match(COMBINE);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key6Context extends ParserRuleContext {
-		public TerminalNode MULTI_DIRECT() { return getToken(FeatureParser.MULTI_DIRECT, 0); }
-		public Key6Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key6; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey6(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey6(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey6(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key6Context key6() throws RecognitionException {
-		Key6Context _localctx = new Key6Context(_ctx, getState());
-		enterRule(_localctx, 40, RULE_key6);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(306);
-			match(MULTI_DIRECT);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key7Context extends ParserRuleContext {
-		public TerminalNode ISIN() { return getToken(FeatureParser.ISIN, 0); }
-		public Key7Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key7; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey7(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey7(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey7(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key7Context key7() throws RecognitionException {
-		Key7Context _localctx = new Key7Context(_ctx, getState());
-		enterRule(_localctx, 42, RULE_key7);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(308);
-			match(ISIN);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Key8Context extends ParserRuleContext {
-		public TerminalNode WINDOW_SUM() { return getToken(FeatureParser.WINDOW_SUM, 0); }
-		public Key8Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_key8; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).enterKey8(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatureListener ) ((FeatureListener)listener).exitKey8(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatureVisitor ) return ((FeatureVisitor<? extends T>)visitor).visitKey8(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final Key8Context key8() throws RecognitionException {
-		Key8Context _localctx = new Key8Context(_ctx, getState());
-		enterRule(_localctx, 44, RULE_key8);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(310);
-			match(WINDOW_SUM);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1958,21 +995,21 @@ public class FeatureParser extends Parser {
 
 	public final Time_expressContext time_express() throws RecognitionException {
 		Time_expressContext _localctx = new Time_expressContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_time_express);
+		enterRule(_localctx, 10, RULE_time_express);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(312);
+			setState(124);
 			match(DAY);
-			setState(313);
+			setState(125);
 			match(T__4);
-			setState(314);
+			setState(126);
 			match(LIMIT);
-			setState(315);
+			setState(127);
 			match(T__5);
-			setState(316);
+			setState(128);
 			match(SECOND);
-			setState(317);
+			setState(129);
 			match(T__6);
 			}
 		}
@@ -2010,11 +1047,11 @@ public class FeatureParser extends Parser {
 
 	public final Table_nameContext table_name() throws RecognitionException {
 		Table_nameContext _localctx = new Table_nameContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_table_name);
+		enterRule(_localctx, 12, RULE_table_name);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(319);
+			setState(131);
 			match(STRING);
 			}
 		}
@@ -2052,11 +1089,11 @@ public class FeatureParser extends Parser {
 
 	public final Field_nameContext field_name() throws RecognitionException {
 		Field_nameContext _localctx = new Field_nameContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_field_name);
+		enterRule(_localctx, 14, RULE_field_name);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(321);
+			setState(133);
 			match(STRING);
 			}
 		}
@@ -2072,107 +1109,43 @@ public class FeatureParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\27\u0146\4\2\t\2"+
-		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
-		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
-		"\4\32\t\32\4\33\t\33\3\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3>\n\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\5\3F\n\3\3\3\3\3\3\3\5\3K\n\3\3\3\3\3\3\3\3\3\3\3\5\3R\n"+
-		"\3\3\3\3\3\3\3\3\3\3\3\5\3Y\n\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3a\n\3\3\3\3"+
-		"\3\3\3\5\3f\n\3\3\3\3\3\3\3\3\3\3\3\5\3m\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\3\5\3w\n\3\3\3\3\3\5\3{\n\3\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
-		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5\u00b8\n"+
-		"\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
-		"\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\u00e5\n\6\3\7\3\7\3\7\3\7\3\7\3"+
-		"\7\3\7\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\n"+
-		"\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3"+
-		"\r\3\r\3\r\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\17"+
-		"\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20"+
-		"\3\21\3\21\3\22\3\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26\3\26\3\27\3\27"+
-		"\3\30\3\30\3\31\3\31\3\31\3\31\3\31\3\31\3\31\3\32\3\32\3\33\3\33\3\33"+
-		"\2\2\34\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\2\4\3"+
-		"\2\r\26\4\2\16\16\23\25\2\u0144\2\66\3\2\2\2\4z\3\2\2\2\6|\3\2\2\2\b\u00b7"+
-		"\3\2\2\2\n\u00e4\3\2\2\2\f\u00e6\3\2\2\2\16\u00ed\3\2\2\2\20\u00f2\3\2"+
-		"\2\2\22\u00f7\3\2\2\2\24\u00fe\3\2\2\2\26\u0105\3\2\2\2\30\u010c\3\2\2"+
-		"\2\32\u0113\3\2\2\2\34\u011b\3\2\2\2\36\u0126\3\2\2\2 \u012a\3\2\2\2\""+
-		"\u012c\3\2\2\2$\u012e\3\2\2\2&\u0130\3\2\2\2(\u0132\3\2\2\2*\u0134\3\2"+
-		"\2\2,\u0136\3\2\2\2.\u0138\3\2\2\2\60\u013a\3\2\2\2\62\u0141\3\2\2\2\64"+
-		"\u0143\3\2\2\2\66\67\5\4\3\2\678\7\2\2\38\3\3\2\2\29:\5\6\4\2:=\7\3\2"+
-		"\2;>\5\36\20\2<>\5\4\3\2=;\3\2\2\2=<\3\2\2\2>?\3\2\2\2?@\7\4\2\2@{\3\2"+
-		"\2\2AB\5\6\4\2BE\7\3\2\2CF\5\36\20\2DF\5\4\3\2EC\3\2\2\2ED\3\2\2\2FG\3"+
-		"\2\2\2GJ\7\5\2\2HK\5\36\20\2IK\5\4\3\2JH\3\2\2\2JI\3\2\2\2KL\3\2\2\2L"+
-		"M\7\4\2\2M{\3\2\2\2NQ\7\3\2\2OR\5\36\20\2PR\5\4\3\2QO\3\2\2\2QP\3\2\2"+
-		"\2RS\3\2\2\2ST\7\4\2\2TU\5\6\4\2UX\7\3\2\2VY\5\36\20\2WY\5\4\3\2XV\3\2"+
-		"\2\2XW\3\2\2\2YZ\3\2\2\2Z[\7\4\2\2[{\3\2\2\2\\]\5\6\4\2]`\7\3\2\2^a\5"+
-		"\36\20\2_a\5\4\3\2`^\3\2\2\2`_\3\2\2\2ab\3\2\2\2be\7\5\2\2cf\5\36\20\2"+
-		"df\5\4\3\2ec\3\2\2\2ed\3\2\2\2fg\3\2\2\2gh\7\5\2\2hi\5\60\31\2il\7\5\2"+
-		"\2jm\5\36\20\2km\5\4\3\2lj\3\2\2\2lk\3\2\2\2mn\3\2\2\2no\7\4\2\2o{\3\2"+
-		"\2\2pq\5\6\4\2qr\7\3\2\2rs\5\62\32\2sv\7\5\2\2tw\5\36\20\2uw\5\4\3\2v"+
-		"t\3\2\2\2vu\3\2\2\2wx\3\2\2\2xy\7\4\2\2y{\3\2\2\2z9\3\2\2\2zA\3\2\2\2"+
-		"zN\3\2\2\2z\\\3\2\2\2zp\3\2\2\2{\5\3\2\2\2|}\t\2\2\2}\7\3\2\2\2~\177\5"+
-		" \21\2\177\u0080\7\3\2\2\u0080\u0081\5\36\20\2\u0081\u0082\7\4\2\2\u0082"+
-		"\u00b8\3\2\2\2\u0083\u0084\5\"\22\2\u0084\u0085\7\3\2\2\u0085\u0086\5"+
-		"\f\7\2\u0086\u0087\7\4\2\2\u0087\u00b8\3\2\2\2\u0088\u0089\5$\23\2\u0089"+
-		"\u008a\7\3\2\2\u008a\u008b\5\62\32\2\u008b\u008c\7\5\2\2\u008c\u008d\5"+
-		"\36\20\2\u008d\u008e\7\4\2\2\u008e\u00b8\3\2\2\2\u008f\u0090\5&\24\2\u0090"+
-		"\u0091\7\3\2\2\u0091\u0092\5\36\20\2\u0092\u0093\7\5\2\2\u0093\u0094\5"+
-		"\36\20\2\u0094\u0095\7\4\2\2\u0095\u00b8\3\2\2\2\u0096\u0097\5(\25\2\u0097"+
-		"\u0098\7\3\2\2\u0098\u0099\5\36\20\2\u0099\u009a\7\5\2\2\u009a\u009b\5"+
-		"\f\7\2\u009b\u009c\7\4\2\2\u009c\u00b8\3\2\2\2\u009d\u009e\5*\26\2\u009e"+
-		"\u009f\7\3\2\2\u009f\u00a0\5\62\32\2\u00a0\u00a1\7\5\2\2\u00a1\u00a2\5"+
-		"\36\20\2\u00a2\u00a3\7\4\2\2\u00a3\u00b8\3\2\2\2\u00a4\u00a5\7\3\2\2\u00a5"+
-		"\u00a6\5\36\20\2\u00a6\u00a7\7\4\2\2\u00a7\u00a8\5,\27\2\u00a8\u00a9\7"+
-		"\3\2\2\u00a9\u00aa\5\36\20\2\u00aa\u00ab\7\4\2\2\u00ab\u00b8\3\2\2\2\u00ac"+
-		"\u00ad\5.\30\2\u00ad\u00ae\7\3\2\2\u00ae\u00af\5\36\20\2\u00af\u00b0\7"+
-		"\5\2\2\u00b0\u00b1\5\36\20\2\u00b1\u00b2\7\5\2\2\u00b2\u00b3\5\60\31\2"+
-		"\u00b3\u00b4\7\5\2\2\u00b4\u00b5\5\36\20\2\u00b5\u00b6\7\4\2\2\u00b6\u00b8"+
-		"\3\2\2\2\u00b7~\3\2\2\2\u00b7\u0083\3\2\2\2\u00b7\u0088\3\2\2\2\u00b7"+
-		"\u008f\3\2\2\2\u00b7\u0096\3\2\2\2\u00b7\u009d\3\2\2\2\u00b7\u00a4\3\2"+
-		"\2\2\u00b7\u00ac\3\2\2\2\u00b8\t\3\2\2\2\u00b9\u00ba\5 \21\2\u00ba\u00bb"+
-		"\7\3\2\2\u00bb\u00bc\5\36\20\2\u00bc\u00bd\7\4\2\2\u00bd\u00e5\3\2\2\2"+
-		"\u00be\u00bf\5\"\22\2\u00bf\u00c0\7\3\2\2\u00c0\u00c1\5\f\7\2\u00c1\u00c2"+
-		"\7\4\2\2\u00c2\u00e5\3\2\2\2\u00c3\u00c4\5&\24\2\u00c4\u00c5\7\3\2\2\u00c5"+
-		"\u00c6\5\36\20\2\u00c6\u00c7\7\5\2\2\u00c7\u00c8\5\36\20\2\u00c8\u00c9"+
-		"\7\4\2\2\u00c9\u00e5\3\2\2\2\u00ca\u00cb\5(\25\2\u00cb\u00cc\7\3\2\2\u00cc"+
-		"\u00cd\5\36\20\2\u00cd\u00ce\7\5\2\2\u00ce\u00cf\5\f\7\2\u00cf\u00d0\7"+
-		"\4\2\2\u00d0\u00e5\3\2\2\2\u00d1\u00d2\7\3\2\2\u00d2\u00d3\5\36\20\2\u00d3"+
-		"\u00d4\7\4\2\2\u00d4\u00d5\5,\27\2\u00d5\u00d6\7\3\2\2\u00d6\u00d7\5\36"+
-		"\20\2\u00d7\u00d8\7\4\2\2\u00d8\u00e5\3\2\2\2\u00d9\u00da\5.\30\2\u00da"+
-		"\u00db\7\3\2\2\u00db\u00dc\5\36\20\2\u00dc\u00dd\7\5\2\2\u00dd\u00de\5"+
-		"\36\20\2\u00de\u00df\7\5\2\2\u00df\u00e0\5\60\31\2\u00e0\u00e1\7\5\2\2"+
-		"\u00e1\u00e2\5\36\20\2\u00e2\u00e3\7\4\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00b9"+
-		"\3\2\2\2\u00e4\u00be\3\2\2\2\u00e4\u00c3\3\2\2\2\u00e4\u00ca\3\2\2\2\u00e4"+
-		"\u00d1\3\2\2\2\u00e4\u00d9\3\2\2\2\u00e5\13\3\2\2\2\u00e6\u00e7\5$\23"+
-		"\2\u00e7\u00e8\7\3\2\2\u00e8\u00e9\5\62\32\2\u00e9\u00ea\7\5\2\2\u00ea"+
-		"\u00eb\5\36\20\2\u00eb\u00ec\7\4\2\2\u00ec\r\3\2\2\2\u00ed\u00ee\5 \21"+
-		"\2\u00ee\u00ef\7\3\2\2\u00ef\u00f0\5\36\20\2\u00f0\u00f1\7\4\2\2\u00f1"+
-		"\17\3\2\2\2\u00f2\u00f3\5\"\22\2\u00f3\u00f4\7\3\2\2\u00f4\u00f5\5\22"+
-		"\n\2\u00f5\u00f6\7\4\2\2\u00f6\21\3\2\2\2\u00f7\u00f8\5$\23\2\u00f8\u00f9"+
-		"\7\3\2\2\u00f9\u00fa\5\62\32\2\u00fa\u00fb\7\5\2\2\u00fb\u00fc\5\36\20"+
-		"\2\u00fc\u00fd\7\4\2\2\u00fd\23\3\2\2\2\u00fe\u00ff\5&\24\2\u00ff\u0100"+
-		"\7\3\2\2\u0100\u0101\5\36\20\2\u0101\u0102\7\5\2\2\u0102\u0103\5\36\20"+
-		"\2\u0103\u0104\7\4\2\2\u0104\25\3\2\2\2\u0105\u0106\5(\25\2\u0106\u0107"+
-		"\7\3\2\2\u0107\u0108\5\36\20\2\u0108\u0109\7\5\2\2\u0109\u010a\5\30\r"+
-		"\2\u010a\u010b\7\4\2\2\u010b\27\3\2\2\2\u010c\u010d\5*\26\2\u010d\u010e"+
-		"\7\3\2\2\u010e\u010f\5\62\32\2\u010f\u0110\7\5\2\2\u0110\u0111\5\36\20"+
-		"\2\u0111\u0112\7\4\2\2\u0112\31\3\2\2\2\u0113\u0114\7\3\2\2\u0114\u0115"+
-		"\5\36\20\2\u0115\u0116\7\4\2\2\u0116\u0117\5,\27\2\u0117\u0118\7\3\2\2"+
-		"\u0118\u0119\5\36\20\2\u0119\u011a\7\4\2\2\u011a\33\3\2\2\2\u011b\u011c"+
-		"\5.\30\2\u011c\u011d\7\3\2\2\u011d\u011e\5\36\20\2\u011e\u011f\7\5\2\2"+
-		"\u011f\u0120\5\36\20\2\u0120\u0121\7\5\2\2\u0121\u0122\5\60\31\2\u0122"+
-		"\u0123\7\5\2\2\u0123\u0124\5\36\20\2\u0124\u0125\7\4\2\2\u0125\35\3\2"+
-		"\2\2\u0126\u0127\5\62\32\2\u0127\u0128\7\6\2\2\u0128\u0129\5\64\33\2\u0129"+
-		"\37\3\2\2\2\u012a\u012b\7\17\2\2\u012b!\3\2\2\2\u012c\u012d\t\3\2\2\u012d"+
-		"#\3\2\2\2\u012e\u012f\7\r\2\2\u012f%\3\2\2\2\u0130\u0131\7\20\2\2\u0131"+
-		"\'\3\2\2\2\u0132\u0133\7\22\2\2\u0133)\3\2\2\2\u0134\u0135\7\r\2\2\u0135"+
-		"+\3\2\2\2\u0136\u0137\7\21\2\2\u0137-\3\2\2\2\u0138\u0139\7\26\2\2\u0139"+
-		"/\3\2\2\2\u013a\u013b\7\n\2\2\u013b\u013c\7\7\2\2\u013c\u013d\7\13\2\2"+
-		"\u013d\u013e\7\b\2\2\u013e\u013f\7\f\2\2\u013f\u0140\7\t\2\2\u0140\61"+
-		"\3\2\2\2\u0141\u0142\7\27\2\2\u0142\63\3\2\2\2\u0143\u0144\7\27\2\2\u0144"+
-		"\65\3\2\2\2\16=EJQX`elvz\u00b7\u00e4";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3%\u008a\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\3\2\3\2\3\2\3\3"+
+		"\3\3\3\3\3\3\5\3\32\n\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\"\n\3\3\3\3\3\3\3"+
+		"\5\3\'\n\3\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\3\3\3\3\3\3\3\3\3\5\3\65\n\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\5\3=\n\3\3\3\3\3\3\3\5\3B\n\3\3\3\3\3\3\3\3\3"+
+		"\3\3\5\3I\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3T\n\3\3\4\3\4\3\4"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
+		"\4\3\4\3\4\3\4\5\4n\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
+		"\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\t\3\t\3\t\2\2\n\2"+
+		"\4\6\b\n\f\16\20\2\2\2\u00a3\2\22\3\2\2\2\4S\3\2\2\2\6m\3\2\2\2\bo\3\2"+
+		"\2\2\nz\3\2\2\2\f~\3\2\2\2\16\u0085\3\2\2\2\20\u0087\3\2\2\2\22\23\5\4"+
+		"\3\2\23\24\7\2\2\3\24\3\3\2\2\2\25\26\5\6\4\2\26\31\7\3\2\2\27\32\5\n"+
+		"\6\2\30\32\5\4\3\2\31\27\3\2\2\2\31\30\3\2\2\2\32\33\3\2\2\2\33\34\7\4"+
+		"\2\2\34T\3\2\2\2\35\36\5\6\4\2\36!\7\3\2\2\37\"\5\n\6\2 \"\5\4\3\2!\37"+
+		"\3\2\2\2! \3\2\2\2\"#\3\2\2\2#&\7\5\2\2$\'\5\n\6\2%\'\5\4\3\2&$\3\2\2"+
+		"\2&%\3\2\2\2\'(\3\2\2\2()\7\4\2\2)T\3\2\2\2*-\7\3\2\2+.\5\n\6\2,.\5\4"+
+		"\3\2-+\3\2\2\2-,\3\2\2\2./\3\2\2\2/\60\7\4\2\2\60\61\5\6\4\2\61\64\7\3"+
+		"\2\2\62\65\5\n\6\2\63\65\5\4\3\2\64\62\3\2\2\2\64\63\3\2\2\2\65\66\3\2"+
+		"\2\2\66\67\7\4\2\2\67T\3\2\2\289\5\6\4\29<\7\3\2\2:=\5\n\6\2;=\5\4\3\2"+
+		"<:\3\2\2\2<;\3\2\2\2=>\3\2\2\2>A\7\5\2\2?B\5\n\6\2@B\5\4\3\2A?\3\2\2\2"+
+		"A@\3\2\2\2BC\3\2\2\2CD\7\5\2\2DE\5\f\7\2EH\7\5\2\2FI\5\n\6\2GI\5\4\3\2"+
+		"HF\3\2\2\2HG\3\2\2\2IJ\3\2\2\2JK\7\4\2\2KT\3\2\2\2LM\5\6\4\2MN\7\3\2\2"+
+		"NO\5\16\b\2OP\7\5\2\2PQ\5\n\6\2QR\7\4\2\2RT\3\2\2\2S\25\3\2\2\2S\35\3"+
+		"\2\2\2S*\3\2\2\2S8\3\2\2\2SL\3\2\2\2T\5\3\2\2\2Un\7\35\2\2Vn\7\34\2\2"+
+		"Wn\7\17\2\2Xn\7\20\2\2Yn\7\21\2\2Zn\7$\2\2[n\7\22\2\2\\n\7\23\2\2]n\7"+
+		"\24\2\2^n\7\25\2\2_n\7\26\2\2`n\7\27\2\2an\7\33\2\2bn\7\37\2\2cn\7 \2"+
+		"\2de\7\36\2\2en\7\16\2\2fn\7!\2\2gn\7#\2\2hn\7\"\2\2in\7\r\2\2jn\7\f\2"+
+		"\2kn\7\13\2\2ln\7\n\2\2mU\3\2\2\2mV\3\2\2\2mW\3\2\2\2mX\3\2\2\2mY\3\2"+
+		"\2\2mZ\3\2\2\2m[\3\2\2\2m\\\3\2\2\2m]\3\2\2\2m^\3\2\2\2m_\3\2\2\2m`\3"+
+		"\2\2\2ma\3\2\2\2mb\3\2\2\2mc\3\2\2\2md\3\2\2\2mf\3\2\2\2mg\3\2\2\2mh\3"+
+		"\2\2\2mi\3\2\2\2mj\3\2\2\2mk\3\2\2\2ml\3\2\2\2n\7\3\2\2\2op\5\6\4\2pq"+
+		"\7\3\2\2qr\5\n\6\2rs\7\5\2\2st\5\n\6\2tu\7\5\2\2uv\5\f\7\2vw\7\5\2\2w"+
+		"x\5\n\6\2xy\7\4\2\2y\t\3\2\2\2z{\5\16\b\2{|\7\6\2\2|}\5\20\t\2}\13\3\2"+
+		"\2\2~\177\7\30\2\2\177\u0080\7\7\2\2\u0080\u0081\7\31\2\2\u0081\u0082"+
+		"\7\b\2\2\u0082\u0083\7\32\2\2\u0083\u0084\7\t\2\2\u0084\r\3\2\2\2\u0085"+
+		"\u0086\7%\2\2\u0086\17\3\2\2\2\u0087\u0088\7%\2\2\u0088\21\3\2\2\2\f\31"+
+		"!&-\64<AHSm";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
