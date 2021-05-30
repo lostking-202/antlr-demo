@@ -4,12 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.util.ResourceUtils;
-import t4.FeatureParser;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -19,11 +15,10 @@ import java.nio.file.Files;
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-public class FeatureVisitor {
+public class FeatureUtil {
 
   private static Properties OP_MAP = new Properties();
   private static final List<String> ss=List.of(
@@ -41,7 +36,7 @@ public class FeatureVisitor {
 
   static {
     try {
-      URLConnection con = FeatureVisitor.class.getClassLoader().getResource("op.properties").openConnection();
+      URLConnection con = FeatureUtil.class.getClassLoader().getResource("op.properties").openConnection();
       //ResourceUtils.useCachesIfNecessary(con);
       InputStream is = con.getInputStream();
       OP_MAP.load(new InputStreamReader(is,StandardCharsets.UTF_8));
@@ -52,7 +47,7 @@ public class FeatureVisitor {
 
   private FeatureParser.ParseContext parseContext;
 
-  public FeatureVisitor(FeatureParser.ParseContext parseContext){
+  public FeatureUtil(FeatureParser.ParseContext parseContext){
     this.parseContext=parseContext;
   }
 

@@ -1,19 +1,9 @@
 package org.antlr.demo;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.springframework.util.ResourceUtils;
-import t4.FeatureLexer;
-import t4.FeatureParser;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
 
 public class Main {
   public static void main(String[] args) throws IOException {
@@ -28,7 +18,7 @@ public class Main {
     FeatureParser parser = new FeatureParser(new CommonTokenStream(lexer));
     parser.setBuildParseTree(true);
     FeatureParser.ParseContext tree = parser.parse();
-    FeatureVisitor visitor=new FeatureVisitor(tree);
+    FeatureUtil visitor=new FeatureUtil(tree);
     System.out.println(visitor.parseFeatureExpress(visitor.getExpress()));
 
     /*String pyconf= Files.readString(ResourceUtils.getFile("classpath:pyconf.json").toPath(), StandardCharsets.UTF_8);
@@ -45,5 +35,6 @@ public class Main {
       )+"和"+toEntityKeys.get(toEntityKeys.size()-1);
     }
     System.out.println(arguments);*/
+    System.out.println(Long.MAX_VALUE);
   }
 }

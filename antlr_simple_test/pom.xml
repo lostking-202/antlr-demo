@@ -33,6 +33,10 @@
                 <version>4.9.2</version>
                 <configuration>
                     <!--指定生成Java文件的输出目录。-->
+
+                    <arguments>
+                        <argument>-visitor</argument>
+                    </arguments>
                     <outputDirectory>src/main/java</outputDirectory>
                 </configuration>
             </plugin>

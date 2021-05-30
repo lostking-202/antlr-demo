@@ -4,18 +4,18 @@ parse
  : feature_express EOF
  ;
 
-feature_express:
-    key'('(variable_name|feature_express)(','(variable_name|feature_express))*')'
-    |'('(variable_name|feature_express)')'key'('(variable_name|feature_express)')'
-    |key'('table_name','variable_name')'
-    |key'('(variable_name)','(variable_name)','time_express','(variable_name)')'
-    |key'('table_name','variable_name','time_express')';
+feature_express
+    :key'('(variable_name|feature_express)(','(variable_name|feature_express))*')'  #combineExpression
+    |'('(variable_name|feature_express)')'key'('(variable_name|feature_express)')'  #judgeExpression
+    |key'('table_name','variable_name')'                                            #mutilDirectExpression
+    |key'('(variable_name)','(variable_name)','time_express','(variable_name)')'    #singleWindowExpression
+    |key'('table_name','variable_name','time_express')'                             #mutilWindowExpression
+    ;
 
 DOT:                                 '.';
 LR_BRACKET:                          '(';
 RR_BRACKET:                          ')';
 COMMA:                               ',';
-
 
 key:ORIGINAL|
     BINARY_LABEL|
