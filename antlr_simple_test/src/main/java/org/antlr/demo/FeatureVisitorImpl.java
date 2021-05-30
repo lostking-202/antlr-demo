@@ -9,6 +9,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.springframework.util.ResourceUtils;
+import t4.FeatureBaseVisitor;
 import t4.FeatureParser;
 import t4.FeatureVisitor;
 
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
 
 
 @Slf4j
-public class FeatureVisitorImpl implements FeatureVisitor<String> {
+public class FeatureVisitorImpl extends FeatureBaseVisitor<String> {
 
     private static Properties OP_MAP = new Properties();
     private static final List<String> ss=List.of(
@@ -43,52 +44,45 @@ public class FeatureVisitorImpl implements FeatureVisitor<String> {
             e.printStackTrace();
         }
     }
-    @Override
-    public String visitParse(FeatureParser.ParseContext ctx) {
-        return visitFeature_express(ctx.feature_express());
-    }
 
     @Override
     public String visitCombineExpression(FeatureParser.CombineExpressionContext ctx) {
-        return visitFeature_express(ctx);
+        return visitFeature_express(ctx,ctx.key());
     }
 
     @Override
     public String visitJudgeExpression(FeatureParser.JudgeExpressionContext ctx) {
-        return visitFeature_express(ctx);
+        return visitFeature_express(ctx,ctx.key());
     }
 
-    //TODO
-    private String visitFeature_express(FeatureParser.Feature_expressContext ctx) {
-        Class c;
-        if(ctx instanceof FeatureParser.CombineExpressionContext){
-            c=FeatureParser.CombineExpressionContext.class;
-        }else{
-            FeatureParser.JudgeExpressionContext context=(FeatureParser.JudgeExpressionContext)ctx;
-        }
+    public String visitFeature_express(FeatureParser.Feature_expressContext ctx,FeatureParser.KeyContext keyContext) {
         List<ParseTreeGroup> children=this.parseTreeGroupByType(ctx);
         String[] arguments=new String[children.size()];
-
-        int expressCount=0;
-
         for(int i=0;i<arguments.length;i++){
-            if(children.get(i).type==Type.Express){
-                arguments[i]=visitFeature_express(ctx.feature_express(expressCount));
-                expressCount++;
-            }else if(children.get(i).type==Type.TimeExpress){
-                arguments[i]=visitTime_express(ctx.time_express());
+            if(children.get(i).type==Type.CombineExpression){
+                arguments[i]=visitCombineExpression((FeatureParser.CombineExpressionContext) children.get(i).child);
+            }else if(children.get(i).type==Type.JudgeExpression){
+                arguments[i]=visitJudgeExpression((FeatureParser.JudgeExpressionContext) children.get(i).child);
+            }else if(children.get(i).type==Type.MutilDirectExpression){
+                arguments[i]=visitMutilDirectExpression((FeatureParser.MutilDirectExpressionContext) children.get(i).child);
+            }else if(children.get(i).type==Type.SingleWindowExpression){
+                arguments[i]=visitSingleWindowExpression((FeatureParser.SingleWindowExpressionContext) children.get(i).child);
+            }else if(children.get(i).type==Type.MutilWindowExpression){
+                arguments[i]=visitMutilWindowExpression((FeatureParser.MutilWindowExpressionContext) children.get(i).child);
             }else{
-                arguments[i]=children.get(i).child.getText();
+                arguments[i]=visitVariable_name((FeatureParser.Variable_nameContext) children.get(i).child);
             }
         }
-        if("combine".equals(ctx.key().getText())){
+        if(ctx instanceof FeatureParser.CombineExpressionContext){
             //缩短参数
             String[] newArguments=new String[2];
             newArguments[0]=String.join("、", Arrays.stream(arguments).collect(Collectors.toList()).subList(0,arguments.length-1));
             newArguments[1]=arguments[arguments.length-1];
-            return MessageFormat.format(OP_MAP.getProperty(visitKey(ctx.key())),newArguments);
+            String message1=MessageFormat.format(OP_MAP.getProperty(visitKey(keyContext)),newArguments);
+            return message1;
         }
-        return MessageFormat.format(OP_MAP.getProperty(visitKey(ctx.key())),arguments);
+        String message2=MessageFormat.format(OP_MAP.getProperty(visitKey(keyContext)),arguments);
+        return message2;
     }
 
     @Override
@@ -112,8 +106,6 @@ public class FeatureVisitorImpl implements FeatureVisitor<String> {
     public String visitMutilWindowExpression(FeatureParser.MutilWindowExpressionContext ctx) {
         String[] arguments=new String[6];
         try{
-            String pyconf= Files.readString(ResourceUtils.getFile("classpath:pyconf.json").toPath(), StandardCharsets.UTF_8);
-            ObjectMapper om=new ObjectMapper();
             String bo_table_name=visitTable_name(ctx.variable_name().table_name());
             List<RelationInfo> relationInfos=getFeatureInfo().getRelations();
             RelationInfo relation=relationInfos.stream().filter(
@@ -149,18 +141,28 @@ public class FeatureVisitorImpl implements FeatureVisitor<String> {
     }
 
     enum Type{
-        TimeExpress,
-        Express,
-        Other
+        MutilDirectExpression,
+        SingleWindowExpression,
+        MutilWindowExpression,
+        CombineExpression,
+        JudgeExpression,Other
     }
 
     private List<ParseTreeGroup> parseTreeGroupByType(FeatureParser.Feature_expressContext feature_expressContext){
         List<ParseTreeGroup> children= Lists.newArrayListWithCapacity(feature_expressContext.children.size());
         for(ParseTree child:feature_expressContext.children){
-            if(child instanceof FeatureParser.Variable_nameContext){
+            if(child instanceof FeatureParser.CombineExpressionContext){
+                children.add(new ParseTreeGroup(Type.CombineExpression,child));
+            }else if(child instanceof FeatureParser.MutilDirectExpressionContext){
+                children.add(new ParseTreeGroup(Type.MutilDirectExpression,child));
+            }else if(child instanceof FeatureParser.JudgeExpressionContext){
+                children.add(new ParseTreeGroup(Type.JudgeExpression,child));
+            }else if(child instanceof FeatureParser.MutilWindowExpressionContext){
+                children.add(new ParseTreeGroup(Type.MutilWindowExpression,child));
+            }else if(child instanceof FeatureParser.SingleWindowExpressionContext){
+                children.add(new ParseTreeGroup(Type.SingleWindowExpression,child));
+            }else if(child instanceof FeatureParser.Variable_nameContext){
                 children.add(new ParseTreeGroup(Type.Other,child));
-            }else if(child instanceof FeatureParser.Feature_expressContext){
-                children.add(new ParseTreeGroup(Type.Express,child));
             }
         }
         return children;
@@ -214,25 +216,5 @@ public class FeatureVisitorImpl implements FeatureVisitor<String> {
     @Override
     public String visitField_name(FeatureParser.Field_nameContext ctx) {
         return ctx.getText();
-    }
-
-    @Override
-    public String visit(ParseTree parseTree) {
-        return null;
-    }
-
-    @Override
-    public String visitChildren(RuleNode ruleNode) {
-        return null;
-    }
-
-    @Override
-    public String visitTerminal(TerminalNode terminalNode) {
-        return null;
-    }
-
-    @Override
-    public String visitErrorNode(ErrorNode errorNode) {
-        return null;
     }
 }

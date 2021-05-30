@@ -2,6 +2,8 @@ package org.antlr.demo;
 
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import t4.FeatureLexer;
+import t4.FeatureParser;
 
 import java.io.IOException;
 
@@ -18,23 +20,7 @@ public class Main {
     FeatureParser parser = new FeatureParser(new CommonTokenStream(lexer));
     parser.setBuildParseTree(true);
     FeatureParser.ParseContext tree = parser.parse();
-    FeatureUtil visitor=new FeatureUtil(tree);
-    System.out.println(visitor.parseFeatureExpress(visitor.getExpress()));
-
-    /*String pyconf= Files.readString(ResourceUtils.getFile("classpath:pyconf.json").toPath(), StandardCharsets.UTF_8);
-    ObjectMapper om=new ObjectMapper();
-    JsonNode jn=om.readTree(pyconf);
-    FeatureInfo featureInfo=om.reader().readValue(jn.findPath("app").findPath("feature_info"),FeatureInfo.class);
-    System.out.println(featureInfo);*/
-    /*String arguments;
-    List<String> toEntityKeys= List.of("A","B","C");
-    if(toEntityKeys.size()<=2){
-      arguments=String.join("和",toEntityKeys);
-    }else{
-      arguments=String.join("、",toEntityKeys.subList(0,toEntityKeys.size()-1)
-      )+"和"+toEntityKeys.get(toEntityKeys.size()-1);
-    }
-    System.out.println(arguments);*/
-    System.out.println(Long.MAX_VALUE);
+    FeatureVisitorImpl visitor = new FeatureVisitorImpl();
+    System.out.println(visitor.visit(tree));
   }
 }

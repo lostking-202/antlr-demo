@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 public class FeatureUtil {
 
-  private static Properties OP_MAP = new Properties();
+  /*private static Properties OP_MAP = new Properties();
   private static final List<String> ss=List.of(
           "multi_sum","multi_max","multi_min","multi_avg","multi_unique_count","multi_count","multi_top3frequency"
   );
@@ -93,7 +93,7 @@ public class FeatureUtil {
       //.findPath("");
       FeatureParser.Variable_nameContext variableContext= context.variable_name().get(0);
       String bo_table_name=variableContext.table_name().getText();
-      /*{
+      *//*{
         "type": "1-M",
               "time_windows": [
         "2d,100:10s"
@@ -109,7 +109,7 @@ public class FeatureUtil {
         "itemId"
                     ],
         "to_entity_time_col": "ingTime"
-      },*/
+      },*//*
       variableContext.field_name();
       List<RelationInfo> relationInfos=getFeatureInfo().getRelations();
       RelationInfo relation=relationInfos.stream().filter(
@@ -180,5 +180,5 @@ public class FeatureUtil {
     TimeExpress,
     Express,
     Other
-  }
+  }*/
 }
